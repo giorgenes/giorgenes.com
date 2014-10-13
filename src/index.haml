@@ -16,6 +16,8 @@
         Linux for server side processing, and on the most
         recent years I've been working with web development
         which is my current focus and passion.
+      %a.down-arrow(href="#")
+        %img(src="../assets/down53.png")
     #citations
       %p
         "Giorgenes is a very dedicated and competent professional. While he worked at T&T he excelled as a software engineer, always doing his best to meet the projects goals and schedules. Giorgenes is very knowledgeable and while working in my team always delivered high quality work. I feel very confident in recommending Giorgenes."
@@ -99,8 +101,9 @@
         %a(href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0")CC BY 3.0
   :javascript
     $(document).ready(function() {
-      $('#main').fullpage({
-        verticalCentered: true,
-        navigation: true
+      $('.down-arrow').on('click', function() {
+        $('body').animate({
+          scrollTop: $('#main').height()
+        });
       });
     });
