@@ -77,11 +77,19 @@ body, div {
 #citations {
   background-color: @citations-bg-color;
 
-  p {
+  .carousel .item > p {
     margin: 0;
     font-size: 18pt;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 7em;
+    margin-right: 7em;
+  }
+
+  .carousel .item {
+    height: 15em;
+  }
+
+  .carousel-control {
+    background-image: none !important;
   }
 
   &:before{

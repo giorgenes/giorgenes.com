@@ -23,10 +23,32 @@
       %a.down-arrow(href="#")
         %img(src="assets/down53.png")
     #citations
-      %p.text-justify
-        "Giorgenes is a very dedicated and competent professional. While he worked at T&T he excelled as a software engineer, always doing his best to meet the projects goals and schedules. Giorgenes is very knowledgeable and while working in my team always delivered high quality work. I feel very confident in recommending Giorgenes."
-      %p.text-right
-        André Magoga, Owner, TeT
+      #carousel-citations.carousel.slide(data-ride="carousel")
+        .carousel-inner
+          .item.active
+            %p.text-justify
+              "Giorgenes is a very dedicated and competent professional. While he worked at T&T he excelled as a software engineer, always doing his best to meet the projects goals and schedules. Giorgenes is very knowledgeable and while working in my team always delivered high quality work. I feel very confident in recommending Giorgenes."
+            %p.text-right
+              %b André Magoga, Owner, TeT
+          .item
+            %p.text-justify
+              "Giorgenes not just have an enviable technical knowledge but also is great to pass it along. As my master, as I usualy refer to him, he did a great job introducing me to new technologies and methodologies, review my code and point things to get better, always for the best. This was great for both me and the project. He is also very friendly and respectful."
+            %p.text-right
+              %b Felipe Tanus, Founder at StrikingCode
+          .item
+            %p.text-justify
+              "Giórgenes has a great self-confidence. He is talented, competent and have very strong technical knowledge. Giórgenes is able to build computing systems with very high quality."
+            %p.text-right
+              %b Eduardo D'Avila, Software Designer at Hewlett-Packard
+          .item
+            %p.text-justify
+              "Giorgenes is a gifted programmer, with solid knowledge in C programming, UNIX (Linux in particular), kernel and embedded/firmware programming. During his term with us, he performed very well as the team lead of one of the firmware components of a project which the goal was to make it processor endian agnostic."
+            %p.text-right
+              %b Hamilton Coutinho, Software Designer at Hewlett-Packard
+        %a.left.carousel-control(href="#carousel-citations" role="button" data-slide="prev")
+          %img(src="assets/left216.png")
+        %a.right.carousel-control(href="#carousel-citations" role="button" data-slide="next")
+          %img(src="assets/keyboard53.png")
     #buzzwords
       %h1 Buzzwords
       %ul
