@@ -13,6 +13,7 @@ module.exports = (grunt) ->
     bower_concat:
       all:
         dest: 'build/_bower.js'
+        cssDest: 'build/_bower.css'
 
     watch:
       css:
@@ -30,6 +31,7 @@ module.exports = (grunt) ->
       production:
         files:
           "build/main.css" : "src/main.less"
+          "build/bootstrap.css" : "bower_components/bootstrap//less/bootstrap.less"
 
     haml:
       dist:
