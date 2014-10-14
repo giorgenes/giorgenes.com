@@ -6,7 +6,7 @@
 /*@skills-color: #fff2ac;*/
 /*@skills-color: #ff8737;*/
 /*@skills-color: #ffbd91;*/
-@skills-color: #001624;
+@skills-color: white;
 @skills-h-color: #ecda77;
 @skills-em-color: @skills-h-color;
 
@@ -136,6 +136,8 @@ body, div {
 
   h1 {
     text-align: center;
+    font-size: 36pt;
+    margin-bottom: 1em;
   }
 
   ul {
@@ -176,6 +178,7 @@ body, div {
   -moz-border-radius: @box-size / 2; 
   -webkit-border-radius: @box-size / 2; 
   border-radius: @box-size / 2;
+
 }
 
 #skills {
@@ -203,7 +206,7 @@ body, div {
 
   h3 {
     color: @skills-h-color;
-    font-size: 40pt;
+    font-size: 36pt;
   }
 
 
@@ -226,6 +229,10 @@ body, div {
     a {
       margin: 15px;
       .circle-img-wrapper(64px, 128px, lighten(@footer-bg-color, 10%));
+
+      &:hover {
+        background-color: lighten(@footer-bg-color, 5%);
+      }
     }
   }
 
