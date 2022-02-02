@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/assets/css/styles.css">
     <meta name="author" content="name">
     <meta name="description" content="description here">
@@ -14,370 +15,495 @@
 
 </head>
 
-<body class="bg-gray-200 font-sans leading-normal tracking-normal">
+<body class="font-halvetica">
+    <header class="relative">
+        <div class="max-w-7xl mx-auto flex items-center justify-between py-5 md:py-8 px-5 md:px-10">
+            <div>
+                <a class="font-bold text-xl sm:text-3xl" href="index.html">Giórgenes Gelatti</a>
+            </div>
 
-    <!--Header-->
-    <div class="w-full m-0 p-0 bg-cover bg-bottom"
-        style="background-image:url('cover.jpg'); height: 60vh; max-height:460px;">
-        <div class="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
-            <!--Title-->
-            <p class="text-white font-extrabold text-3xl md:text-5xl">
-                👻 Ghostwind CSS
-            </p>
-            <p class="text-xl md:text-2xl text-gray-500">Welcome to my Blog</p>
+            <div class="hidden md:flex items-center text-xl space-x-10 lg:space-x-20">
+                <a class="border-b-2 border-transparent hover:border-black py-2" href="#about">About</a>
+                <a class="border-b-2 border-transparent hover:border-black py-2" href="#blog">Blog</a>
+                <a class="border-b-2 border-transparent hover:border-black py-2" href="#projects">Resources</a>
+                <a class="font-bold border-b-2 border-transparent hover:border-black py-2" href="#">Portfolio</a>
+            </div>
+
+            <button class="menuBtn md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
-    </div>
 
-    <!--Container-->
-    <div class="container px-4 md:px-0 max-w-6xl mx-auto -mt-32">
+        <!-- mobile menu -->
+        <div
+            class="menu absolute z-50 top-0 left-0 w-full h-screen bg-black text-white -translate-x-full transition ease-in-out py-5 px-5">
+            <button class="xBtn float-right">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
 
-        <div class="mx-0 sm:mx-6">
+            <div class="pt-6 pb-9">
+                <a class="font-bold sm:text-xl" href="index.html">Giórgenes Gelatti</a>
+            </div>
 
-            <!--Nav-->
-            <nav class="mt-0 w-full">
-                <div class="container mx-auto flex items-center">
+            <div class="text-xs sm:text-base space-y-3">
+                <a class="block border-b-2 border-transparent hover:border-white pb-1" href="#about">About</a>
+                <a class="block border-b-2 border-transparent hover:border-white pb-1" href="#blog">Blog</a>
+                <a class="block border-b-2 border-transparent hover:border-white pb-1" href="#projects">Resources</a>
+                <a class="block font-bold border-b-2 border-transparent hover:border-white pb-1" href="#">Portfolio</a>
+            </div>
+        </div>
+    </header>
 
-                    <div class="flex w-1/2 pl-4 text-sm">
-                        <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
-                            <li class="mr-2">
-                                <a class="inline-block py-2 px-2 text-white no-underline hover:underline"
-                                    href="{{ site.posts.first.url }}">POST</a>
-                            </li>
-                            <li class="mr-2">
-                                <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2"
-                                    href="#">LINK</a>
-                            </li>
-                            <li class="mr-2">
-                                <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2"
-                                    href="#">LINK</a>
-                            </li>
-                            <li class="mr-2">
-                                <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2"
-                                    href="post_vue.html">POST_VUE</a>
-                            </li>
-                        </ul>
+    <main>
+        <!-- hero -->
+        <section class="relative max-w-7xl mx-auto px-10 py-5 md:pt-24 md:pb-28">
+            <div class="relative z-10 md:flex items-center justify-between">
+                <!-- profile image -->
+                <div class="md:hidden relative w-32 h-44 rounded-full mx-auto overflow-hidden mb-5">
+                    <img class="absolute z-10 bottom-0" src="assets/img/avatar.png" alt="profile image">
+                    <div class="absolute z-0 w-full h-full top-0 left-0 bg-gradient-to-t from-[#F1F1F1]/50 to-white">
                     </div>
-
-
-                    <div class="flex w-1/2 justify-end content-center">
-                        <a class="inline-block text-gray-500 no-underline hover:text-white hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
-                            data-tippy-content="@twitter_handle" href="https://twitter.com/intent/tweet?url=#">
-                            <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                <path
-                                    d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a class="inline-block text-gray-500 no-underline hover:text-white hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 avatar"
-                            data-tippy-content="#facebook_id" href="https://www.facebook.com/sharer/sharer.php?u=#">
-                            <svg class="fill-current h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                <path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-
                 </div>
-            </nav>
 
-            <div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
+                <div>
+                    <h3 class="font-medium text-sm sm:text-xl lg:text-3xl pb-5">Hey there! I’m</h3>
+                    <h1 class="font-bold text-3xl lg:text-5xl xl:text-7xl pb-9">Giórgenes Gelatti, <br> Software
+                        Engineer.</h1>
+                    <p class="max-w-xl text-xs sm:text-base lg:text-xl pb-5">I’ve built web programs for over 20 years.
+                        I specialize in backend, web and API development, software architecture and I dabble in
+                        frontend.</p>
+                    <div class="flex items-center text-xs sm:text-base lg:text-xl space-x-2">
+                        <p>Need something?</p>
+                        <a class="underline hover:no-underline" href="#">Email me.</a>
+                    </div>
+                </div>
 
-                <!--Lead Card-->
-                <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
-                    <a href="post.html" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="w-full md:w-2/3 rounded-t">
-                            <img src="https://source.unsplash.com/collection/494263/800x600"
-                                class="h-full w-full shadow">
+                <div class="hidden md:flex items-center space-x-8">
+                    <!-- profile image for desktop -->
+                    <div
+                        class="hidden md:block relative w-32 sm:w-52 lg:w-72 h-44 sm:h-72 lg:h-[420px] rounded-full overflow-hidden">
+                        <img class="absolute z-10 bottom-0" src="assets/img/avatar.png" alt="profile image">
+                        <div
+                            class="absolute z-0 w-full h-full top-0 left-0 bg-gradient-to-t from-[#F1F1F1]/50 to-white">
                         </div>
+                    </div>
 
-                        <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-                            <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                                <p class="w-full text-gray-600 text-xs md:text-sm pt-6 px-6">GETTING STARTED</p>
-                                <div class="w-full font-bold text-xl text-gray-900 px-6">👋 Welcome fellow Tailwind CSS
-                                    and Ghost fan</div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    This starter template is an attempt to replicate the default Ghost theme "Casper"
-                                    using Tailwind CSS and vanilla Javascript.
-
-                                    {{ content }}
-                                </p>
-                            </div>
-
+                    <!-- social icons for desktop -->
+                    <div class="flex flex-col items-center space-y-8">
+                        <div
+                            class="relative flex flex-col items-center justify-end w-16 lg:w-24 h-52 lg:h-64 rounded-full overflow-hidden space-y-10 p-4 lg:p-6">
+                            <!-- github -->
+                            <a class="block relative z-10 text-brand-gray hover:text-black transition ease-in-out"
+                                href="#">
+                                <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M17.5 0C7.83125 0 0 7.83125 0 17.5C0 25.2438 5.00938 31.7844 11.9656 34.1031C12.8406 34.2563 13.1687 33.7313 13.1687 33.2719C13.1687 32.8563 13.1469 31.4781 13.1469 30.0125C8.75 30.8219 7.6125 28.9406 7.2625 27.9563C7.06563 27.4531 6.2125 25.9 5.46875 25.4844C4.85625 25.1563 3.98125 24.3469 5.44688 24.325C6.825 24.3031 7.80938 25.5938 8.1375 26.1188C9.7125 28.7656 12.2281 28.0219 13.2344 27.5625C13.3875 26.425 13.8469 25.6594 14.35 25.2219C10.4563 24.7844 6.3875 23.275 6.3875 16.5813C6.3875 14.6781 7.06563 13.1031 8.18125 11.8781C8.00625 11.4406 7.39375 9.64688 8.35625 7.24063C8.35625 7.24063 9.82187 6.78125 13.1687 9.03438C14.5688 8.64063 16.0562 8.44375 17.5438 8.44375C19.0312 8.44375 20.5188 8.64063 21.9188 9.03438C25.2656 6.75938 26.7313 7.24063 26.7313 7.24063C27.6938 9.64688 27.0813 11.4406 26.9063 11.8781C28.0219 13.1031 28.7 14.6563 28.7 16.5813C28.7 23.2969 24.6094 24.7844 20.7156 25.2219C21.35 25.7688 21.8969 26.8188 21.8969 28.4594C21.8969 30.8 21.875 32.6813 21.875 33.2719C21.875 33.7313 22.2031 34.2781 23.0781 34.1031C26.5521 32.9302 29.5709 30.6975 31.7095 27.7191C33.8481 24.7407 34.999 21.1667 35 17.5C35 7.83125 27.1688 0 17.5 0Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
+                            <!-- gitlab -->
+                            <a class="block relative z-10 text-brand-gray hover:text-black transition ease-in-out"
+                                href="#">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M39.0169 23.7058L34.346 7.81624C34.0546 6.94205 33.3561 6.35498 32.4219 6.35498C31.4878 6.35498 30.7293 6.88206 30.4379 7.75624L27.344 16.9866H16.5495L13.4556 7.76053C13.1642 6.88635 12.4057 6.35927 11.4716 6.35927C10.5374 6.35927 9.77891 6.94205 9.54751 7.82052L4.88092 23.7058C4.70523 24.2886 4.94091 24.9314 5.408 25.2827L21.9232 37.667L38.4941 25.2827C38.9569 24.9356 39.1926 24.2929 39.0169 23.7058Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </a>
                             <div
-                                class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                                <div class="flex items-center justify-between">
-                                    <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                        src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                    <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                                </div>
+                                class="absolute z-0 w-full h-full top-0 left-0 bg-gradient-to-t from-[#E5E5E5]/40 to-white">
                             </div>
                         </div>
 
+                        <!-- twitter -->
+                        <a href="#"
+                            class="flex items-center justify-center w-16 lg:w-24 h-16 lg:h-24 rounded-full border-4 border-gray-100 text-brand-gray hover:text-black transition ease-in-out">
+                            <svg width="35" height="35" viewBox="0 0 35 35" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M33.9172 7.08238C32.7193 7.61317 31.4325 7.9718 30.0797 8.13391C31.4756 7.2987 32.5198 5.98419 33.0177 4.43564C31.7063 5.21458 30.271 5.76288 28.7743 6.05668C27.7678 4.98201 26.4346 4.2697 24.9818 4.03034C23.529 3.79098 22.0378 4.03797 20.7397 4.73295C19.4416 5.42793 18.4093 6.53203 17.8031 7.87383C17.1968 9.21563 17.0505 10.72 17.3868 12.1535C14.7296 12.0201 12.1301 11.3294 9.75705 10.1264C7.38402 8.92329 5.29046 7.23468 3.61226 5.17013C3.03844 6.15997 2.7085 7.30761 2.7085 8.52985C2.70786 9.63014 2.97881 10.7136 3.49733 11.684C4.01584 12.6545 4.76587 13.482 5.68089 14.093C4.61971 14.0593 3.58196 13.7725 2.65398 13.2567V13.3428C2.65388 14.886 3.18768 16.3817 4.16483 17.5761C5.14197 18.7706 6.50227 19.5901 8.0149 19.8958C7.03049 20.1622 5.99841 20.2015 4.99661 20.0106C5.42338 21.3384 6.2547 22.4995 7.37418 23.3314C8.49367 24.1633 9.84527 24.6243 11.2398 24.6499C8.87252 26.5082 5.94899 27.5163 2.93946 27.5118C2.40635 27.512 1.8737 27.4808 1.34424 27.4186C4.39908 29.3827 7.95514 30.4251 11.5869 30.4211C23.881 30.4211 30.6019 20.2387 30.6019 11.4076C30.6019 11.1206 30.5947 10.8309 30.5818 10.544C31.8891 9.59855 33.0176 8.42784 33.9143 7.08669L33.9172 7.08238Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+
+                        <!-- linkedin -->
+                        <a href="#"
+                            class="flex items-center justify-center w-16 lg:w-24 h-16 lg:h-24 rounded-full border-4 border-gray-100 text-brand-gray hover:text-black transition ease-in-out">
+                            <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.33673 3.79344C1.33673 3.14186 1.59557 2.51698 2.0563 2.05624C2.51703 1.59551 3.14192 1.33667 3.7935 1.33667H28.2836C28.6065 1.33615 28.9264 1.39931 29.2248 1.52256C29.5233 1.6458 29.7945 1.8267 30.0229 2.0549C30.2514 2.28311 30.4326 2.55413 30.5562 2.85245C30.6797 3.15077 30.7432 3.47054 30.7431 3.79344V28.2836C30.7434 28.6065 30.6801 28.9264 30.5567 29.2248C30.4333 29.5233 30.2523 29.7945 30.024 30.023C29.7957 30.2514 29.5245 30.4326 29.2261 30.5561C28.9277 30.6797 28.6079 30.7432 28.285 30.743H3.7935C3.47076 30.743 3.15118 30.6794 2.85302 30.5559C2.55487 30.4323 2.28398 30.2512 2.05583 30.023C1.82768 29.7947 1.64674 29.5237 1.52336 29.2255C1.39997 28.9272 1.33656 28.6076 1.33673 28.2849V3.79344ZM12.9763 12.5485H16.9582V14.5481C17.5329 13.3986 19.0033 12.364 21.2127 12.364C25.4486 12.364 26.4524 14.6537 26.4524 18.8548V26.6368H22.1658V19.8119C22.1658 17.4193 21.591 16.0692 20.1314 16.0692C18.1064 16.0692 17.2643 17.5249 17.2643 19.8119V26.6368H12.9763V12.5485ZM5.62471 26.4537H9.91269V12.364H5.62471V26.4523V26.4537ZM10.5262 7.76864C10.5343 8.13578 10.469 8.50084 10.3341 8.84239C10.1991 9.18394 9.99736 9.4951 9.74057 9.75762C9.48377 10.0201 9.17712 10.2287 8.83863 10.3711C8.50013 10.5135 8.1366 10.5869 7.76937 10.5869C7.40213 10.5869 7.0386 10.5135 6.7001 10.3711C6.36161 10.2287 6.05496 10.0201 5.79816 9.75762C5.54137 9.4951 5.33959 9.18394 5.20468 8.84239C5.06977 8.50084 5.00444 8.13578 5.01252 7.76864C5.02839 7.04799 5.32581 6.3622 5.84109 5.85814C6.35637 5.35409 7.04854 5.07183 7.76937 5.07183C8.49019 5.07183 9.18236 5.35409 9.69764 5.85814C10.2129 6.3622 10.5103 7.04799 10.5262 7.76864Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- social icons for mobile -->
+                <div
+                    class="flex md:hidden items-center ml-auto border-2 border-brand-gray rounded-full w-36 space-x-4 mt-10 p-4">
+                    <!-- twitter -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg width="15" height="15" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M33.9172 7.08238C32.7193 7.61317 31.4325 7.9718 30.0797 8.13391C31.4756 7.2987 32.5198 5.98419 33.0177 4.43564C31.7063 5.21458 30.271 5.76288 28.7743 6.05668C27.7678 4.98201 26.4346 4.2697 24.9818 4.03034C23.529 3.79098 22.0378 4.03797 20.7397 4.73295C19.4416 5.42793 18.4093 6.53203 17.8031 7.87383C17.1968 9.21563 17.0505 10.72 17.3868 12.1535C14.7296 12.0201 12.1301 11.3294 9.75705 10.1264C7.38402 8.92329 5.29046 7.23468 3.61226 5.17013C3.03844 6.15997 2.7085 7.30761 2.7085 8.52985C2.70786 9.63014 2.97881 10.7136 3.49733 11.684C4.01584 12.6545 4.76587 13.482 5.68089 14.093C4.61971 14.0593 3.58196 13.7725 2.65398 13.2567V13.3428C2.65388 14.886 3.18768 16.3817 4.16483 17.5761C5.14197 18.7706 6.50227 19.5901 8.0149 19.8958C7.03049 20.1622 5.99841 20.2015 4.99661 20.0106C5.42338 21.3384 6.2547 22.4995 7.37418 23.3314C8.49367 24.1633 9.84527 24.6243 11.2398 24.6499C8.87252 26.5082 5.94899 27.5163 2.93946 27.5118C2.40635 27.512 1.8737 27.4808 1.34424 27.4186C4.39908 29.3827 7.95514 30.4251 11.5869 30.4211C23.881 30.4211 30.6019 20.2387 30.6019 11.4076C30.6019 11.1206 30.5947 10.8309 30.5818 10.544C31.8891 9.59855 33.0176 8.42784 33.9143 7.08669L33.9172 7.08238Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <!-- linkedin -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg width="15" height="15" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.33673 3.79344C1.33673 3.14186 1.59557 2.51698 2.0563 2.05624C2.51703 1.59551 3.14192 1.33667 3.7935 1.33667H28.2836C28.6065 1.33615 28.9264 1.39931 29.2248 1.52256C29.5233 1.6458 29.7945 1.8267 30.0229 2.0549C30.2514 2.28311 30.4326 2.55413 30.5562 2.85245C30.6797 3.15077 30.7432 3.47054 30.7431 3.79344V28.2836C30.7434 28.6065 30.6801 28.9264 30.5567 29.2248C30.4333 29.5233 30.2523 29.7945 30.024 30.023C29.7957 30.2514 29.5245 30.4326 29.2261 30.5561C28.9277 30.6797 28.6079 30.7432 28.285 30.743H3.7935C3.47076 30.743 3.15118 30.6794 2.85302 30.5559C2.55487 30.4323 2.28398 30.2512 2.05583 30.023C1.82768 29.7947 1.64674 29.5237 1.52336 29.2255C1.39997 28.9272 1.33656 28.6076 1.33673 28.2849V3.79344ZM12.9763 12.5485H16.9582V14.5481C17.5329 13.3986 19.0033 12.364 21.2127 12.364C25.4486 12.364 26.4524 14.6537 26.4524 18.8548V26.6368H22.1658V19.8119C22.1658 17.4193 21.591 16.0692 20.1314 16.0692C18.1064 16.0692 17.2643 17.5249 17.2643 19.8119V26.6368H12.9763V12.5485ZM5.62471 26.4537H9.91269V12.364H5.62471V26.4523V26.4537ZM10.5262 7.76864C10.5343 8.13578 10.469 8.50084 10.3341 8.84239C10.1991 9.18394 9.99736 9.4951 9.74057 9.75762C9.48377 10.0201 9.17712 10.2287 8.83863 10.3711C8.50013 10.5135 8.1366 10.5869 7.76937 10.5869C7.40213 10.5869 7.0386 10.5135 6.7001 10.3711C6.36161 10.2287 6.05496 10.0201 5.79816 9.75762C5.54137 9.4951 5.33959 9.18394 5.20468 8.84239C5.06977 8.50084 5.00444 8.13578 5.01252 7.76864C5.02839 7.04799 5.32581 6.3622 5.84109 5.85814C6.35637 5.35409 7.04854 5.07183 7.76937 5.07183C8.49019 5.07183 9.18236 5.35409 9.69764 5.85814C10.2129 6.3622 10.5103 7.04799 10.5262 7.76864Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <!-- github -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg width="15" height="15" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.5 0C7.83125 0 0 7.83125 0 17.5C0 25.2438 5.00938 31.7844 11.9656 34.1031C12.8406 34.2563 13.1687 33.7313 13.1687 33.2719C13.1687 32.8563 13.1469 31.4781 13.1469 30.0125C8.75 30.8219 7.6125 28.9406 7.2625 27.9563C7.06563 27.4531 6.2125 25.9 5.46875 25.4844C4.85625 25.1563 3.98125 24.3469 5.44688 24.325C6.825 24.3031 7.80938 25.5938 8.1375 26.1188C9.7125 28.7656 12.2281 28.0219 13.2344 27.5625C13.3875 26.425 13.8469 25.6594 14.35 25.2219C10.4563 24.7844 6.3875 23.275 6.3875 16.5813C6.3875 14.6781 7.06563 13.1031 8.18125 11.8781C8.00625 11.4406 7.39375 9.64688 8.35625 7.24063C8.35625 7.24063 9.82187 6.78125 13.1687 9.03438C14.5688 8.64063 16.0562 8.44375 17.5438 8.44375C19.0312 8.44375 20.5188 8.64063 21.9188 9.03438C25.2656 6.75938 26.7313 7.24063 26.7313 7.24063C27.6938 9.64688 27.0813 11.4406 26.9063 11.8781C28.0219 13.1031 28.7 14.6563 28.7 16.5813C28.7 23.2969 24.6094 24.7844 20.7156 25.2219C21.35 25.7688 21.8969 26.8188 21.8969 28.4594C21.8969 30.8 21.875 32.6813 21.875 33.2719C21.875 33.7313 22.2031 34.2781 23.0781 34.1031C26.5521 32.9302 29.5709 30.6975 31.7095 27.7191C33.8481 24.7407 34.999 21.1667 35 17.5C35 7.83125 27.1688 0 17.5 0Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <!-- gitlab -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg width="17" height="17" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M39.0169 23.7058L34.346 7.81624C34.0546 6.94205 33.3561 6.35498 32.4219 6.35498C31.4878 6.35498 30.7293 6.88206 30.4379 7.75624L27.344 16.9866H16.5495L13.4556 7.76053C13.1642 6.88635 12.4057 6.35927 11.4716 6.35927C10.5374 6.35927 9.77891 6.94205 9.54751 7.82052L4.88092 23.7058C4.70523 24.2886 4.94091 24.9314 5.408 25.2827L21.9232 37.667L38.4941 25.2827C38.9569 24.9356 39.1926 24.2929 39.0169 23.7058Z"
+                                fill="currentColor" />
+                        </svg>
                     </a>
                 </div>
-                <!--/Lead Card-->
-
-
-                <!--Posts Container-->
-                <div class="flex flex-wrap justify-between pt-12 -mx-6">
-
-                    <!--1/3 col -->
-                    <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                <img src="https://source.unsplash.com/collection/225/800x600"
-                                    class="h-64 w-full rounded-t pb-6">
-                                <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-                                <div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.
-                                </div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc
-                                    commodo posuere et sit amet ligula.
-                                </p>
-                            </a>
-                        </div>
-                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                            <div class="flex items-center justify-between">
-                                <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                    src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!--1/3 col -->
-                    <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                <img src="https://source.unsplash.com/collection/3106804/800x600"
-                                    class="h-64 w-full rounded-t pb-6">
-                                <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-                                <div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.
-                                </div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet,
-                                    consectetur adipiscing elit. Aliquam at ip Aliquam at ipsum eu nunc commodo posuere
-                                    et sit amet ligula.
-                                </p>
-                            </a>
-                        </div>
-                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                            <div class="flex items-center justify-between">
-                                <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                    src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--1/3 col -->
-                    <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                <img src="https://source.unsplash.com/collection/539527/800x600"
-                                    class="h-64 w-full rounded-t pb-6">
-                                <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-                                <div class="w-full  font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.
-                                </div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    Lorem ipsum eu nunc commodo posuere et sit amet ligula.
-                                </p>
-                            </a>
-                        </div>
-                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                            <div class="flex items-center justify-between">
-                                <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                    src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!--1/2 col -->
-                    <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
-                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                <img src="https://source.unsplash.com/collection/3657445/800x600"
-                                    class="h-full w-full rounded-t pb-6">
-                                <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-                                <div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.
-                                </div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    Lorem ipsum eu nunc commodo posuere et sit amet ligula.
-                                </p>
-                            </a>
-                        </div>
-                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                            <div class="flex items-center justify-between">
-                                <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                    src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--1/2 col -->
-                    <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
-                        <div class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                <img src="https://source.unsplash.com/collection/764827/800x600"
-                                    class="h-full w-full rounded-t pb-6">
-                                <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-                                <div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.
-                                </div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    Lorem ipsum eu nunc commodo posuere et sit amet ligula.
-                                </p>
-                            </a>
-                        </div>
-                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                            <div class="flex items-center justify-between">
-                                <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                    src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <!--2/3 col -->
-                    <div class="w-full md:w-2/3 p-6 flex flex-col flex-grow flex-shrink">
-                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                <img src="https://source.unsplash.com/collection/325867/800x600"
-                                    class="h-full w-full rounded-t pb-6">
-                                <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-                                <div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.
-                                </div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    Lorem ipsum eu nunc commodo posuere et sit amet ligula.
-                                </p>
-                            </a>
-                        </div>
-                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                            <div class="flex items-center justify-between">
-                                <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                    src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--1/3 col -->
-                    <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                            <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                <img src="https://source.unsplash.com/collection/1118905/800x600"
-                                    class="h-full w-full rounded-t pb-6">
-                                <p class="w-full text-gray-600 text-xs md:text-sm px-6">GETTING STARTED</p>
-                                <div class="w-full font-bold text-xl text-gray-900 px-6">Lorem ipsum dolor sit amet.
-                                </div>
-                                <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                    Lorem ipsum eu nunc commodo posuere et sit amet ligula.
-                                </p>
-                            </a>
-                        </div>
-                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                            <div class="flex items-center justify-between">
-                                <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name"
-                                    src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                <p class="text-gray-600 text-xs md:text-sm">1 MIN READ</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!--/ Post Content-->
-
             </div>
 
+            <!-- bottom left shape -->
+            <svg class="hidden lg:block animate-pulse absolute z-0 -bottom-10 left-0" width="96" height="183"
+                viewBox="0 0 96 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="-2" width="92" height="179" rx="46" transform="matrix(1 0 0 -1 0 179)"
+                    stroke="url(#paint0_linear_33_11)" stroke-width="4" />
+                <defs>
+                    <linearGradient id="paint0_linear_33_11" x1="70" y1="163.545" x2="122.126" y2="13.4531"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#F1F1F1" stop-opacity="0.57" />
+                        <stop offset="0.505208" stop-color="#E0DFDF" stop-opacity="0.35" />
+                        <stop offset="1" stop-color="#868585" stop-opacity="0.13" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </section>
 
-            <!--Subscribe-->
-            <div class="container font-sans bg-green-100 rounded mt-8 p-4 md:p-24 text-center">
-                <h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to Ghostwind CSS</h2>
-                <h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Get the latest posts
-                    delivered right to your inbox</h3>
-                <div class="w-full text-center pt-4">
-                    <form action="#">
-                        <div class="max-w-xl mx-auto p-1 pr-0 flex flex-wrap items-center">
-                            <input type="email" placeholder="youremail@example.com"
-                                class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
-                            <button type="submit"
-                                class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">Subscribe</button>
+        <!-- About me -->
+        <section id="about" class="bg-[#F4F4F4] py-10 md:py-24">
+            <div class="relative max-w-7xl md:flex items-center mx-auto px-4 lg:px-10">
+                <div class="flex-1 relative z-10">
+                    <p class="font-light text-sm md:text-lg lg:text-2xl text-center md:text-left pb-3 md:pb-5">About Me
+                    </p>
+                    <h1 class="font-bold text-2xl md:text-4xl lg:text-5xl text-center md:text-left pb-7 md:pb-0">
+                        Building, <br>
+                        Problem Solving <br>
+                        Technical Prowess</h1>
+                </div>
+                <div class="flex-1 text-xs sm:text-base lg:text-xl text-justify">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Senectus rhoncus euismod ultricies
+                        eleifend montes, pharetra, enim quis. In ut pharetra facilisis leo nulla turpis urna, massa, ut.
+                        Orci ornare eu nunc, consequat sed tempor. Pellentesque vulputate porttitor proin cras
+                        sollicitudin sodales porttitor amet, aliquam.</p> <br>
+                    <p>Nec nisl tincidunt condimentum netus enim, venenatis suspendisse condimentum mauris. Hendrerit
+                        non non dictum dictum sed dapibus sit porta. Amet, proin semper duis nulla ultrices quis felis
+                        pellentesque. Ac ante sed dolor sagittis viverra sollicitudin tortor. Cursus suscipit.</p>
+                </div>
+
+                <!-- left shape -->
+                <svg class="hidden lg:block animate-pulse absolute z-0 left-0" width="96" height="374"
+                    viewBox="0 0 96 374" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="92" height="370" rx="46" stroke="url(#paint0_linear_33_10)"
+                        stroke-width="4" />
+                    <defs>
+                        <linearGradient id="paint0_linear_33_10" x1="70" y1="334.239" x2="-34.1447" y2="27.1097"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E4E4E4" stop-opacity="0.57" />
+                            <stop offset="0.505208" stop-color="#FAFAFA" stop-opacity="0.35" />
+                            <stop offset="1" stop-color="#A09898" stop-opacity="0.13" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </section>
+
+        <!-- projects -->
+        <section id="projects" class="max-w-7xl mx-auto px-5 md:px-10 py-10 md:py-28">
+            <p class="font-light text-sm md:text-lg lg:text-2xl text-center md:text-left pb-3 md:pb-5">Projects</p>
+            <h3 class="font-bold text-2xl md:text-4xl lg:text-5xl text-center md:text-left pb-24">I’ve worked with some
+                amazing people at</h3>
+
+            <div class="flex flex-wrap items-center justify-center">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/gitlab.png" alt="gitlab">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/reevoo.png" alt="reevoo">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/weloveit.png" alt="weloveit">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/everest.png" alt="everest">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/toptal.png" alt="toptal">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/montesora.png" alt="montesora">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/terra.png" alt="terra">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/tools-tech.png" alt="tools-tech">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/canopus.png" alt="canopus">
+                <img class="w-1/4 hover:scale-110 transition ease-in-out cursor-pointer py-2 md:py-4 px-2.5 md:px-8"
+                    src="assets/img/trevi-pay.png" alt="trevi-pay">
+            </div>
+        </section>
+
+        <!-- blog -->
+        <section id="blog" class="bg-[#F4F4F4]">
+            <div class="relative max-w-7xl mx-auto px-10 py-10 md:py-24">
+                <p class="font-light text-sm md:text-lg lg:text-2xl text-center md:text-left pb-3 md:pb-5">Blog</p>
+                <h3 class="font-bold text-2xl md:text-4xl lg:text-5xl text-center md:text-left">Musings of a seasoned
+                    software engineer</h3>
+                <!-- search -->
+                <div class="relative max-w-2xl my-7 md:my-10">
+                    <input class="text-[#C4C4C4] w-full rounded-full bg-white focus:outline-none py-3 pl-12" type="text"
+                        placeholder="Search Blog">
+                    <svg class="absolute top-2.5 left-3" width="27" height="27" viewBox="0 0 27 27" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.4549 20.8705C17.1792 20.8705 21.0091 17.0406 21.0091 12.3162C21.0091 7.59188 17.1792 3.76202 12.4549 3.76202C7.73049 3.76202 3.90063 7.59188 3.90063 12.3162C3.90063 17.0406 7.73049 20.8705 12.4549 20.8705Z"
+                            stroke="#C4C4C4" stroke-width="2.56627" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M23.1474 23.0084L18.4961 18.3571" stroke="#C4C4C4" stroke-width="2.56627"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+
+                <div class="swiper blogSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide space-y-5 sm:space-y-0">
+                            <div class="bg-white rounded p-8">
+                                <div class="flex items-center font-light text-sm space-x-1.5 pb-3">
+                                    <p>07/10/2021</p>
+                                    <p>•</p>
+                                    <p>25 min read</p>
+                                </div>
+                                <h1 class="font-medium text-2xl pb-3">Guide: What is Agile Software Development?</h1>
+                                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et maecenas
+                                    ut eu tellus.</p> <br>
+                                <p class="text-sm pb-7">Tags: <strong>Agile, Guide</strong></p>
+                                <a class="inline-block font-medium text-sm rounded border border-black hover:bg-black hover:text-white transition ease-in-out py-1.5 px-3"
+                                    href="#">Read More</a>
+                            </div>
+
+                            <div class="sm:hidden bg-white rounded p-8">
+                                <div class="flex items-center font-light text-sm space-x-1.5 pb-3">
+                                    <p>07/10/2021</p>
+                                    <p>•</p>
+                                    <p>25 min read</p>
+                                </div>
+                                <h1 class="font-medium text-2xl pb-3">Guide: What is Agile Software Development?</h1>
+                                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et maecenas
+                                    ut eu tellus.</p> <br>
+                                <p class="text-sm pb-7">Tags: <strong>Agile, Guide</strong></p>
+                                <a class="inline-block font-medium text-sm rounded border border-black hover:bg-black hover:text-white transition ease-in-out py-1.5 px-3"
+                                    href="#">Read More</a>
+                            </div>
                         </div>
-                    </form>
+
+                        <div class="swiper-slide space-y-5 sm:space-y-0">
+                            <div class="bg-white rounded p-8">
+                                <div class="flex items-center font-light text-sm space-x-1.5 pb-3">
+                                    <p>07/10/2021</p>
+                                    <p>•</p>
+                                    <p>25 min read</p>
+                                </div>
+                                <h1 class="font-medium text-2xl pb-3">Guide: What is Agile Software Development?</h1>
+                                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et maecenas
+                                    ut eu tellus.</p> <br>
+                                <p class="text-sm pb-7">Tags: <strong>Agile, Guide</strong></p>
+                                <a class="inline-block font-medium text-sm rounded border border-black hover:bg-black hover:text-white transition ease-in-out py-1.5 px-3"
+                                    href="#">Read More</a>
+                            </div>
+
+                            <div class="sm:hidden bg-white rounded p-8">
+                                <div class="flex items-center font-light text-sm space-x-1.5 pb-3">
+                                    <p>07/10/2021</p>
+                                    <p>•</p>
+                                    <p>25 min read</p>
+                                </div>
+                                <h1 class="font-medium text-2xl pb-3">Guide: What is Agile Software Development?</h1>
+                                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et maecenas
+                                    ut eu tellus.</p> <br>
+                                <p class="text-sm pb-7">Tags: <strong>Agile, Guide</strong></p>
+                                <a class="inline-block font-medium text-sm rounded border border-black hover:bg-black hover:text-white transition ease-in-out py-1.5 px-3"
+                                    href="#">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide space-y-5 sm:space-y-0">
+                            <div class="bg-white rounded p-8">
+                                <div class="flex items-center font-light text-sm space-x-1.5 pb-3">
+                                    <p>07/10/2021</p>
+                                    <p>•</p>
+                                    <p>25 min read</p>
+                                </div>
+                                <h1 class="font-medium text-2xl pb-3">Guide: What is Agile Software Development?</h1>
+                                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et maecenas
+                                    ut eu tellus.</p> <br>
+                                <p class="text-sm pb-7">Tags: <strong>Agile, Guide</strong></p>
+                                <a class="inline-block font-medium text-sm rounded border border-black hover:bg-black hover:text-white transition ease-in-out py-1.5 px-3"
+                                    href="#">Read More</a>
+                            </div>
+
+                            <div class="sm:hidden bg-white rounded p-8">
+                                <div class="flex items-center font-light text-sm space-x-1.5 pb-3">
+                                    <p>07/10/2021</p>
+                                    <p>•</p>
+                                    <p>25 min read</p>
+                                </div>
+                                <h1 class="font-medium text-2xl pb-3">Guide: What is Agile Software Development?</h1>
+                                <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et maecenas
+                                    ut eu tellus.</p> <br>
+                                <p class="text-sm pb-7">Tags: <strong>Agile, Guide</strong></p>
+                                <a class="inline-block font-medium text-sm rounded border border-black hover:bg-black hover:text-white transition ease-in-out py-1.5 px-3"
+                                    href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end space-x-8 mt-8 sm:mt-14">
+                        <div
+                            class="swiper-button-prev relative text-white rounded-full h-8 bg-[#AAAAAA] hover:bg-black transition ease-in-out px-4">
+                        </div>
+                        <div
+                            class="swiper-button-next relative text-white rounded-full h-8 bg-[#AAAAAA] hover:bg-black transition ease-in-out px-4">
+                        </div>
+                    </div>
                 </div>
+
+                <!-- right top shape -->
+                <svg class="hidden lg:block animate-pulse absolute z-0 right-0 -top-14" width="96" height="374"
+                    viewBox="0 0 96 374" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="92" height="370" rx="46" stroke="url(#paint0_linear_33_10)"
+                        stroke-width="4" />
+                    <defs>
+                        <linearGradient id="paint0_linear_33_10" x1="70" y1="334.239" x2="-34.1447" y2="27.1097"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E4E4E4" stop-opacity="0.57" />
+                            <stop offset="0.505208" stop-color="#FAFAFA" stop-opacity="0.35" />
+                            <stop offset="1" stop-color="#A09898" stop-opacity="0.13" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <!-- right middle shape -->
+                <svg class="hidden lg:block animate-pulse absolute z-0 right-0 top-1/2" width="96" height="183"
+                    viewBox="0 0 96 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="-2" width="92" height="179" rx="46" transform="matrix(1 0 0 -1 0 179)"
+                        stroke="url(#paint0_linear_33_11)" stroke-width="4" />
+                    <defs>
+                        <linearGradient id="paint0_linear_33_11" x1="70" y1="163.545" x2="122.126" y2="13.4531"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#F1F1F1" stop-opacity="0.57" />
+                            <stop offset="0.505208" stop-color="#E0DFDF" stop-opacity="0.35" />
+                            <stop offset="1" stop-color="#868585" stop-opacity="0.13" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <!-- right bottom shape -->
+                <svg class="hidden lg:block animate-pulse absolute z-0 right-0 -bottom-16" width="96" height="281"
+                    viewBox="0 0 96 281" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="-2" width="92" height="277" rx="46" transform="matrix(1 0 0 -1 0 277)"
+                        stroke="url(#paint0_linear_33_8)" stroke-width="4" />
+                    <defs>
+                        <linearGradient id="paint0_linear_33_8" x1="70" y1="251.126" x2="177.232" y2="50.044"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#F1F1F1" stop-opacity="0.57" />
+                            <stop offset="0.505208" stop-color="#E0DFDF" stop-opacity="0.35" />
+                            <stop offset="1" stop-color="#868585" stop-opacity="0.13" />
+                        </linearGradient>
+                    </defs>
+                </svg>
             </div>
-            <!-- /Subscribe-->
+        </section>
 
+        <!-- work together -->
+        <section class="max-w-7xl mx-auto px-10 py-14 md:pt-28 md:pb-44">
+            <h1 class="font-bold text-2xl md:text-4xl lg:text-5xl text-center md:text-left pb-8">Let’s work together for
+                your next project.</h1>
+            <p class="text-xs sm:text-base lg:text-xl pb-4 sm:pb-12">Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Senectus rhoncus euismod ultricies eleifend montes, pharetra, enim quis. </p>
+            <a class="text-sm sm:tet-lg lg:text-2xl underline hover:no-underline"
+                href="mailto:giorgenes@giorgenes.com">giorgenes@giorgenes.com</a>
+        </section>
+    </main>
 
-            <!--Author-->
-            <div class="flex w-full items-center font-sans p-8 md:p-24">
-                <img class="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                <div class="flex-1">
-                    <p class="text-base font-bold text-base md:text-xl leading-none">Ghostwind CSS</p>
-                    <p class="text-gray-600 text-xs md:text-base">Tailwind CSS version of Ghost's Casper theme by <a
-                            class="text-gray-800 hover:text-green-500 no-underline border-b-2 border-green-500"
-                            href="https://www.tailwindtoolbox.com">TailwindToolbox.com</a></p>
-                </div>
-                <div class="justify-end">
-                    <button
-                        class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full">Read
-                        More</button>
-                </div>
+    <footer class="max-w-7xl mx-auto border-t-2 border-[#E5E5E5] px-10 py-4 sm:pt-12 sm:pb-16">
+        <div class="sm:flex items-start justify-between">
+            <div>
+                <h3 class="font-bold text-xl md:text-3xl pb-1.5">Giórgenes Gelatti</h3>
+                <a class="text-xs sm:text-base md:text-xl underline hover:no-underline"
+                    href="mailto:giorgenes@giorgenes.com">giorgenes@giorgenes.com</a>
             </div>
-            <!--/Author-->
 
-        </div>
-
-
-    </div>
-
-
-    <footer class="bg-gray-900">
-        <div class="container max-w-6xl mx-auto flex items-center px-2 py-8">
-
-            <div class="w-full mx-auto flex flex-wrap items-center">
-                <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
-                    <a class="text-gray-900 no-underline hover:text-gray-900 hover:no-underline" href="#">
-                        👻 <span class="text-base text-gray-200">Ghostwind CSS</span>
+            <div class="flex items-center justify-between sm:block pt-5 sm:pt-0">
+                <div class="flex items-center space-x-4 sm:space-x-10 sm:pb-8">
+                    <!-- twitter -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg class="w-4 sm:w-9 h-4 sm:h-9" viewBox="0 0 35 35" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M33.9172 7.08238C32.7193 7.61317 31.4325 7.9718 30.0797 8.13391C31.4756 7.2987 32.5198 5.98419 33.0177 4.43564C31.7063 5.21458 30.271 5.76288 28.7743 6.05668C27.7678 4.98201 26.4346 4.2697 24.9818 4.03034C23.529 3.79098 22.0378 4.03797 20.7397 4.73295C19.4416 5.42793 18.4093 6.53203 17.8031 7.87383C17.1968 9.21563 17.0505 10.72 17.3868 12.1535C14.7296 12.0201 12.1301 11.3294 9.75705 10.1264C7.38402 8.92329 5.29046 7.23468 3.61226 5.17013C3.03844 6.15997 2.7085 7.30761 2.7085 8.52985C2.70786 9.63014 2.97881 10.7136 3.49733 11.684C4.01584 12.6545 4.76587 13.482 5.68089 14.093C4.61971 14.0593 3.58196 13.7725 2.65398 13.2567V13.3428C2.65388 14.886 3.18768 16.3817 4.16483 17.5761C5.14197 18.7706 6.50227 19.5901 8.0149 19.8958C7.03049 20.1622 5.99841 20.2015 4.99661 20.0106C5.42338 21.3384 6.2547 22.4995 7.37418 23.3314C8.49367 24.1633 9.84527 24.6243 11.2398 24.6499C8.87252 26.5082 5.94899 27.5163 2.93946 27.5118C2.40635 27.512 1.8737 27.4808 1.34424 27.4186C4.39908 29.3827 7.95514 30.4251 11.5869 30.4211C23.881 30.4211 30.6019 20.2387 30.6019 11.4076C30.6019 11.1206 30.5947 10.8309 30.5818 10.544C31.8891 9.59855 33.0176 8.42784 33.9143 7.08669L33.9172 7.08238Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <!-- linkedin -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg class="w-4 sm:w-9 h-4 sm:h-9" viewBox="0 0 33 33" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.33673 3.79344C1.33673 3.14186 1.59557 2.51698 2.0563 2.05624C2.51703 1.59551 3.14192 1.33667 3.7935 1.33667H28.2836C28.6065 1.33615 28.9264 1.39931 29.2248 1.52256C29.5233 1.6458 29.7945 1.8267 30.0229 2.0549C30.2514 2.28311 30.4326 2.55413 30.5562 2.85245C30.6797 3.15077 30.7432 3.47054 30.7431 3.79344V28.2836C30.7434 28.6065 30.6801 28.9264 30.5567 29.2248C30.4333 29.5233 30.2523 29.7945 30.024 30.023C29.7957 30.2514 29.5245 30.4326 29.2261 30.5561C28.9277 30.6797 28.6079 30.7432 28.285 30.743H3.7935C3.47076 30.743 3.15118 30.6794 2.85302 30.5559C2.55487 30.4323 2.28398 30.2512 2.05583 30.023C1.82768 29.7947 1.64674 29.5237 1.52336 29.2255C1.39997 28.9272 1.33656 28.6076 1.33673 28.2849V3.79344ZM12.9763 12.5485H16.9582V14.5481C17.5329 13.3986 19.0033 12.364 21.2127 12.364C25.4486 12.364 26.4524 14.6537 26.4524 18.8548V26.6368H22.1658V19.8119C22.1658 17.4193 21.591 16.0692 20.1314 16.0692C18.1064 16.0692 17.2643 17.5249 17.2643 19.8119V26.6368H12.9763V12.5485ZM5.62471 26.4537H9.91269V12.364H5.62471V26.4523V26.4537ZM10.5262 7.76864C10.5343 8.13578 10.469 8.50084 10.3341 8.84239C10.1991 9.18394 9.99736 9.4951 9.74057 9.75762C9.48377 10.0201 9.17712 10.2287 8.83863 10.3711C8.50013 10.5135 8.1366 10.5869 7.76937 10.5869C7.40213 10.5869 7.0386 10.5135 6.7001 10.3711C6.36161 10.2287 6.05496 10.0201 5.79816 9.75762C5.54137 9.4951 5.33959 9.18394 5.20468 8.84239C5.06977 8.50084 5.00444 8.13578 5.01252 7.76864C5.02839 7.04799 5.32581 6.3622 5.84109 5.85814C6.35637 5.35409 7.04854 5.07183 7.76937 5.07183C8.49019 5.07183 9.18236 5.35409 9.69764 5.85814C10.2129 6.3622 10.5103 7.04799 10.5262 7.76864Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <!-- github -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg class="w-4 sm:w-9 h-4 sm:h-9" viewBox="0 0 35 35" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.5 0C7.83125 0 0 7.83125 0 17.5C0 25.2438 5.00938 31.7844 11.9656 34.1031C12.8406 34.2563 13.1687 33.7313 13.1687 33.2719C13.1687 32.8563 13.1469 31.4781 13.1469 30.0125C8.75 30.8219 7.6125 28.9406 7.2625 27.9563C7.06563 27.4531 6.2125 25.9 5.46875 25.4844C4.85625 25.1563 3.98125 24.3469 5.44688 24.325C6.825 24.3031 7.80938 25.5938 8.1375 26.1188C9.7125 28.7656 12.2281 28.0219 13.2344 27.5625C13.3875 26.425 13.8469 25.6594 14.35 25.2219C10.4563 24.7844 6.3875 23.275 6.3875 16.5813C6.3875 14.6781 7.06563 13.1031 8.18125 11.8781C8.00625 11.4406 7.39375 9.64688 8.35625 7.24063C8.35625 7.24063 9.82187 6.78125 13.1687 9.03438C14.5688 8.64063 16.0562 8.44375 17.5438 8.44375C19.0312 8.44375 20.5188 8.64063 21.9188 9.03438C25.2656 6.75938 26.7313 7.24063 26.7313 7.24063C27.6938 9.64688 27.0813 11.4406 26.9063 11.8781C28.0219 13.1031 28.7 14.6563 28.7 16.5813C28.7 23.2969 24.6094 24.7844 20.7156 25.2219C21.35 25.7688 21.8969 26.8188 21.8969 28.4594C21.8969 30.8 21.875 32.6813 21.875 33.2719C21.875 33.7313 22.2031 34.2781 23.0781 34.1031C26.5521 32.9302 29.5709 30.6975 31.7095 27.7191C33.8481 24.7407 34.999 21.1667 35 17.5C35 7.83125 27.1688 0 17.5 0Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                    <!-- gitlab -->
+                    <a class="text-brand-gray hover:text-black hover:-translate-y-1 transition ease-in-out" href="#">
+                        <svg class="w-4 sm:w-9 h-4 sm:h-9" viewBox="0 0 44 44" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M39.0169 23.7058L34.346 7.81624C34.0546 6.94205 33.3561 6.35498 32.4219 6.35498C31.4878 6.35498 30.7293 6.88206 30.4379 7.75624L27.344 16.9866H16.5495L13.4556 7.76053C13.1642 6.88635 12.4057 6.35927 11.4716 6.35927C10.5374 6.35927 9.77891 6.94205 9.54751 7.82052L4.88092 23.7058C4.70523 24.2886 4.94091 24.9314 5.408 25.2827L21.9232 37.667L38.4941 25.2827C38.9569 24.9356 39.1926 24.2929 39.0169 23.7058Z"
+                                fill="currentColor" />
+                        </svg>
                     </a>
                 </div>
-                <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
-                    <ul class="list-reset flex justify-center flex-1 md:flex-none items-center">
-                        <li>
-                            <a class="inline-block py-2 px-3 text-white no-underline" href="#">Active</a>
-                        </li>
-                        <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3"
-                                href="#">link</a>
-                        </li>
-                        <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3"
-                                href="#">link</a>
-                        </li>
-                        <li>
-                            <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-3"
-                                href="#">link</a>
-                        </li>
-                    </ul>
-                </div>
+                <p class="text-xs sm:text-base">© 2021 Giórgenes Gelatti</p>
             </div>
-
-
-
         </div>
     </footer>
 
-    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@4"></script>
-    <script>
-        //Init tooltips
-        tippy('.avatar')
-    </script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/assets/js/app.js"></script>
 </body>
 
 </html>

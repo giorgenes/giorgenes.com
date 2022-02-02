@@ -6,6 +6,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.foo-other {
-  color: black;
+:root {
+    scroll-behavior: smooth;
+}
+
+@layer base {
+    @font-face {
+        font-family: 'HelveticaNeue';
+        src: url('/assets/fonts/HelveticaNeueMedium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    
+    @font-face {
+        font-family: 'HelveticaNeue';
+        src: url('/assets/fonts/HelveticaNeueLight.woff2') format('woff2');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+    
+    @font-face {
+        font-family: 'HelveticaNeue';
+        src: url('/assets/fonts/HelveticaNeueBold.woff2') format('woff2');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 15px !important;
 }
