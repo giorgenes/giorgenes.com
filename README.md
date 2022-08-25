@@ -9,3 +9,8 @@ rougify style monokai.sublime > assets/css/syntax.css
 
 List of styles can also be downloaded from here:
 [http://richleland.github.io/pygments-css/](http://richleland.github.io/pygments-css/)
+
+### How to run
+
+`bundle exec jekyll serve`
+
